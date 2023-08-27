@@ -21,7 +21,7 @@ export default function SunburstChart(props) {
 		  .children('taxons')
 		  .onClick(d => { 
 				chart.current.focusOnNode(d);
-				props.taxonChange(d.name);
+				if( d != null ) props.taxonChange(d.name);
 				console.log(props);
 			})
 		  (ref.current)
