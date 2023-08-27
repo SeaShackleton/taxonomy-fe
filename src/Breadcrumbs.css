@@ -4,4 +4,8 @@
 .breadcrumbs li {
 	display: inline;
 	padding: 0px 1em;
+	font-size: 1em;
+}
+.breadcrumbs li:last-child {
+	font-size: 1.5em;
 }
