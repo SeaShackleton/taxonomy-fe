@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
 import SunburstChart from "./SunburstChart";
+import Breadcrumbs from "./Breadcrumbs";
 
 function App() {
 	const [data, setData] = useState();
 	const [isLoading, setLoading] = useState(true);
+	const [taxonomy, setTaxonomy] = useState();
 	
 	const fetchTaxonData = () => {
 		fetch("http://localhost:8000/api/taxonomy/1")
@@ -14,6 +16,7 @@ function App() {
 			.then(d => {
 				setData(d);
 				setLoading(false);
+				setTaxonomy(d.name);
 			})
 	};	
 		
@@ -21,12 +24,19 @@ function App() {
 		fetchTaxonData();
 	  }, []);
 	
+	function handleTaxon(taxon){
+		console.log("the new taxon is "+ taxon);
+		setTaxonomy(taxon);
+	}
+	
+	
 	if(isLoading){
 		return <div>Loading</div>
 	}	
 	return (
 		<div className="App">
-			<SunburstChart data={data}/>
+			<Breadcrumbs taxonomy={taxonomy} />
+			<SunburstChart data={data} taxonChange={ handleTaxon }/>
 		</div>
 	);
 }

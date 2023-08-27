@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Sunburst from 'sunburst-chart'
 import * as d3 from 'd3'
 
@@ -21,6 +21,8 @@ export default function SunburstChart(props) {
 		  .children('taxons')
 		  .onClick(d => { 
 				chart.current.focusOnNode(d);
+				props.taxonChange(d.name);
+				console.log(props);
 			})
 		  (ref.current)
 	  }, []);
