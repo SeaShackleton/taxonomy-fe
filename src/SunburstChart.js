@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
-import Sunburst from 'sunburst-chart'
-import * as d3 from 'd3'
-
+import React, { useEffect, useRef, useState } from 'react';
+import Sunburst from 'sunburst-chart';
+import * as d3 from 'd3';
+import TaxonomyServices from './services/TaxonomyService';
 
 export default function SunburstChart(props) {
 	const chart = React.useRef(null);
@@ -19,10 +19,12 @@ export default function SunburstChart(props) {
 		  //.radiusScaleExponent(0.4)
 		  .labelOrientation('angular')
 		  .children('taxons')
-		  .onClick(d => { 
+		  .onClick((d,e) => { 
 				chart.current.focusOnNode(d);
 				if( d != null ) props.taxonChange(d.name);
-				console.log(props);
+				//console.log(d);
+				TaxonomyServices.getAncestoryById(props.data, d.id);
+				//console.log(props.data);
 			})
 		  (ref.current)
 	  }, []);

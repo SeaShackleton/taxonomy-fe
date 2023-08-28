@@ -1,7 +1,7 @@
 import "./Breadcrumbs.css";
 
 export default function Breadcrumbs(props) {
-	console.log(props);
+	//console.log(props);
 	
 	
 	return (
