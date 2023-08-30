@@ -21,10 +21,10 @@ export default function SunburstChart(props) {
 		  .children('taxons')
 		  .onClick((d,e) => { 
 				chart.current.focusOnNode(d);
-				if( d != null ) props.taxonChange(d.name);
-				//console.log(d);
-				TaxonomyServices.getAncestoryById(props.data, d.id);
-				//console.log(props.data);
+				if( d != null ){
+					let taxonAncestry = TaxonomyServices.getAncestoryById(props.data, d.id);
+					props.taxonChange(taxonAncestry);
+				}
 			})
 		  (ref.current)
 	  }, []);

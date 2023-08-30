@@ -16,7 +16,7 @@ function App() {
 			.then(d => {
 				setData(d);
 				setLoading(false);
-				setTaxonomy(d.name);
+				setTaxonomy([{id:d.id, name:d.name}]);
 			})
 	};	
 		
@@ -25,10 +25,8 @@ function App() {
 	  }, []);
 	
 	function handleTaxon(taxon){
-		console.log("the new taxon is "+ taxon);
 		setTaxonomy(taxon);
-	}
-	
+	}	
 	
 	if(isLoading){
 		return <div>Loading</div>
