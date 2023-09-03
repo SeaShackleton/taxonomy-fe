@@ -9,7 +9,8 @@ function App() {
 	const [taxonomy, setTaxonomy] = useState();
 	
 	const fetchTaxonData = () => {
-		fetch("http://localhost:8000/api/taxonomy/1")
+		fetch("http://localhost:8000/api/taxons/1")
+		//fetch("http://localhost:8000/api/taxonomy/1")
 			.then(response => {
 				return response.json()
 			})

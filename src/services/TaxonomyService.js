@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 const TaxonomyService = (function(){
 	
 	const getAncestory = (target, children, ancestors = [{id:1, name:"Life"}]) => {
-		if(children.hasOwnProperty("taxons")) {
-			for(let child of children.taxons){
+		if(children.hasOwnProperty("children")) {
+			for(let child of children.children){
 				if(children.id === target) {
 					return ancestors;
 				}

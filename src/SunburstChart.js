@@ -18,7 +18,7 @@ export default function SunburstChart(props) {
 		  .excludeRoot(true)
 		  //.radiusScaleExponent(0.4)
 		  .labelOrientation('angular')
-		  .children('taxons')
+		  .children('children')
 		  .onClick((d,e) => { 
 				chart.current.focusOnNode(d);
 				if( d != null ){
