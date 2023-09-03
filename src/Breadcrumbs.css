@@ -1,5 +1,6 @@
 .breadcrumbs {
 	list-style-type: none;
+	margin:0px;
 }
 .breadcrumbs li {
 	display: inline;

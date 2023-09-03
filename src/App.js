@@ -10,7 +10,6 @@ function App() {
 	
 	const fetchTaxonData = () => {
 		fetch("http://localhost:8000/api/taxons/1")
-		//fetch("http://localhost:8000/api/taxonomy/1")
 			.then(response => {
 				return response.json()
 			})
@@ -33,7 +32,10 @@ function App() {
 		return <div>Loading</div>
 	}	
 	return (
-		<div className="App">
+		<div id="container" className="App">
+			<div id="nav">
+				<h1>Taxonomy</h1>
+			</div>
 			<Breadcrumbs taxonomy={taxonomy} />
 			<SunburstChart data={data} taxonChange={ handleTaxon }/>
 		</div>
