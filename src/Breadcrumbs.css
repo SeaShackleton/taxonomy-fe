@@ -1,12 +1,14 @@
 .breadcrumbs {
 	list-style-type: none;
 	margin:0px;
+	font-weight: 300;
 }
 .breadcrumbs li {
 	display: inline;
 	padding: 0px 1em;
 	font-size: 1em;
 }
-.breadcrumbs li:last-child {
+.breadcrumbs li:first-child {
 	font-size: 1.5em;
+	font-weight: 400;
 }

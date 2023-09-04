@@ -25,7 +25,7 @@ function App() {
 	  }, []);
 	
 	function handleTaxon(taxon){
-		setTaxonomy(taxon);
+		setTaxonomy(taxon.reverse());
 	}	
 	
 	if(isLoading){
