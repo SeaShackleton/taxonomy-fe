@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './App.css';
 import SunburstChart from "./SunburstChart";
 import Breadcrumbs from "./Breadcrumbs";
+import TaxonImages from "./TaxonImages";
 
 function App() {
 	const [data, setData] = useState();
@@ -37,7 +38,10 @@ function App() {
 				<h1>Taxonomy</h1>
 			</div>
 			<Breadcrumbs taxonomy={taxonomy} />
-			<SunburstChart data={data} taxonChange={ handleTaxon }/>
+			<div id="sunBurstAndImgCont">
+				<SunburstChart data={data} taxonChange={ handleTaxon }/>
+				<TaxonImages taxon={taxonomy} />
+			</div>
 		</div>
 	);
 }

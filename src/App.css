@@ -53,5 +53,9 @@ html, body {
 
 
 #sunburst {
-	display: inline-block;
+	float: left;
+}
+
+#sunBurstAndImgCont {
+	padding-top: 1.5em;
 }
