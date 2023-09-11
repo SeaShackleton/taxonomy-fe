@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import {url} from './constants/globals';
 import './TaxonImages.css';
 
 export default function TaxonImages(props) {
+	const [images, setImages] = useState([]);
 	  
 	  useEffect( () => {
 		console.log(props.taxon[0].id);
@@ -11,14 +13,24 @@ export default function TaxonImages(props) {
 					return response.json()
 				})
 				.then(d => {
+					setImages(d);
 					console.log(d);
 				})			
 		};
-		
 		getImages();
+		
+		return () => {
+			setImages([]);
+		}
+		
+
 	  }, [props.taxon]);
 	  
 	  return (
-		<div id="imageCont">test</div>
+		<div id="imageCont">
+			{images.map( (image) => (
+				<img src={url+"/img/taxons/"+ props.taxon[0].id +"/"+image.file_name} />
+			))}
+		</div>
 	  );
 }
