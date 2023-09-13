@@ -2,13 +2,19 @@
 	list-style-type: none;
 	margin:0px;
 	font-weight: 300;
+	width: 100%;
+	padding: 0px;
+	display:inline-block;
 }
 .breadcrumbs li {
 	display: inline;
 	padding: 0px 1em;
 	font-size: 1em;
+	line-height: 1.7em;
+	float:left;
 }
 .breadcrumbs li:first-child {
 	font-size: 1.5em;
 	font-weight: 400;
+	line-height: 1em;
 }
