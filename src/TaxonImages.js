@@ -5,8 +5,9 @@ import './TaxonImages.css';
 export default function TaxonImages(props) {
 	const [images, setImages] = useState([]);
 	  
-	  useEffect( () => {
+	useEffect( () => {
 		console.log(props.taxon[0].id);
+
 		const getImages = () => {
 			fetch("http://localhost:8000/api/taxons/"+ props.taxon[0].id +"/images")
 				.then(response => {
@@ -18,19 +19,19 @@ export default function TaxonImages(props) {
 				})			
 		};
 		getImages();
-		
+
 		return () => {
 			setImages([]);
 		}
-		
 
-	  }, [props.taxon]);
-	  
-	  return (
+
+	}, [props.taxon]);
+  
+	return (
 		<div id="imageCont">
 			{images.map( (image) => (
-				<img src={url+"/img/taxons/"+ props.taxon[0].id +"/"+image.file_name} />
+				<img src={url+"/img/taxons/"+ image.taxon_id +"/"+image.file_name} />
 			))}
 		</div>
-	  );
+	);
 }
