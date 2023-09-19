@@ -1,9 +1,9 @@
-#imageCont {
+#imageCont, .loadingContainer {
 	float:left;
 	width:524px;
 	height:460px;
-	background-color:red;
 	line-height: 0;
+	position: relative;
 
 	-webkit-column-count: 3;
 	-webkit-column-gap:   0px;

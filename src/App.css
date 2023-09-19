@@ -59,3 +59,11 @@ html, body {
 #sunBurstAndImgCont {
 	padding-top: 1.5em;
 }
+
+
+.loadingContainer img{
+	width:50px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
